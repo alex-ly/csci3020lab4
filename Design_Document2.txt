@@ -1,0 +1,9 @@
+a) Memory Allocation
+	Memory is seperated into chunks of 64, 64, 128, 256, and 512MB and a process is stored to the first best fit chunk that is available (status of 0).
+b) Structures
+	The queue is a basic linked list with the functions of isEmpty, pop, and push. Dispatching would first allocate memory (if available) then to the appropriate priority queue.
+c) Functionailty
+	Memory is allocated into an array of size 1024, where there will be an iterator that scans through the array chunks to check if memory is free and is the size is applicable for a single contiguous allocation of memory. When a process finds available memory, it is dispatched to the respective prioritized queue. When executing processes, the real time queue processes are executed until completion. The 1st and 2nd queues proecesses are ran for 1 second then drops to the lower priority queue. The 3rd priority queue processes are executed when all higher priority queues are empty. Once a process has been ran to its completion, it is not added back to the queue and thus terminated. 
+	Major functions of the host dispatcher are to allocate/dealocate memory, signal process and dispatch to queue. The queues' functionality would be the standard functions of pop, push and isEmpty.
+d) Multilevel Dispatching
+	Multilevel dispatching prioritizes processes based on their need for processor into queues to execute in ordinance. They are dispacted by a first come first served schedule. It also gives priority to short jobs by executing for 1 second before dropping queue levels. This is very useful for having a limited amount of shared memory between processes.
